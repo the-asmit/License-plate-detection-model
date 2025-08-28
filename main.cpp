@@ -15,7 +15,7 @@ int main() {
 	VideoCapture cap(0); //captures webcam
 
 	CascadeClassifier plateCascade; //CascadeClassifier is a fn of openCV which reads pre-trained model through .xml files
-	plateCascade.load("C:/Users/dell/Desktop/license_plate/haarcascade_russian_plate_number.xml");
+	plateCascade.load("put ur .xml file here");
 
 	if (plateCascade.empty()) { 
         cout << "XML file not loaded" << endl; 
@@ -33,7 +33,7 @@ int main() {
 			Mat imgCrop = img(plates[i]); //the number plate cropped img from the videocaputed
 
 			// imshow(to_string(i), imgCrop);
-			imwrite("C:/Users/dell/Desktop/license_plate" + to_string(i) + ".png", imgCrop); //saves cropped img to this location
+			imwrite("choose location to where u want to save" + to_string(i) + ".png", imgCrop); //saves cropped img to this location
 
 			rectangle(img, plates[i].tl(), plates[i].br(), Scalar(255, 0, 255), 3); //the rectangle that appears around the plates
 		}
